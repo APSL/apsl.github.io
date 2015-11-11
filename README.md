@@ -11,7 +11,7 @@ Tested with npm 2 and Node.js 0.12 and 4.
 * Go to http://localhost:8080/
 
 
- All options:
+All options:
 
 * `npm start` : Local server with development assets with hot reload.
 * `npm run server-dev` : Local server with development assets without hot reload.
