@@ -1,0 +1,18 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "ecmaFeatures": {
+        "jsx": true,
+        "modules": true
+    },
+    "parser": "babel-eslint",
+    "rules": {
+        "strict": [2, "never"],
+        "quotes": [1, "single", "avoid-escape"],
+    },
+    "plugins": [
+        "react"
+    ]
+}

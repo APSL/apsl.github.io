@@ -1,0 +1,46 @@
+# apsl.github.io
+
+Source code for APSL GitHub page [apsl.github.io](http://apsl.github.io).
+
+## Development
+
+Tested with npm 2 and Node.js 0.12 and 4.
+
+* `npm install`
+* `npm start`
+* Go to http://localhost:8080/
+
+
+ All options:
+
+* `npm start` : Local server with development assets with hot reload.
+* `npm run server-dev` : Local server with development assets without hot reload.
+* `npm run build-dev` : Build development assets.
+* `npm run server-prod` : Local server with production (minified) assets without hot reload.
+* `npm run build-prod` : Build production assets in dist directory.
+
+
+## Contribute
+
+If you would like to contribute to the project, be it new features or
+bugs, please do the following:
+
+1. Fork the repository.
+1. Create a new topic branch off the master branch that describe what it does.
+1. Before commit, generate `dist` directory running `npm run build-prod`.
+1. Commit and push the branch.
+1. Make a pull request describing what you have done.
+1. Now it will hopefully get merged :)
+
+All pull requests should:
+
+* Use .eslintrc file to pass the [ESLint](http://eslint.org/) linter.
+* Follow .editorconfig file rules. See [EditorConfig](http://editorconfig.org).
+
+
+## TODO
+
+* Add config to choose port in local server.
+* Tests.
+* Fetch more than 100 repositories.
+* Migrate to Babel 6.

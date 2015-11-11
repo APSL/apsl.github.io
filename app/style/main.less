@@ -1,0 +1,185 @@
+@text-color: #4E4A48;
+
+body {
+  font-family: "Arimo", "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+  color: @text-color;
+}
+
+footer {
+  margin-top: 50px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  width: 100%;
+  background-color: @text-color;
+  color: white;
+  a {
+    color: white;
+    text-decoration: none;
+    &:hover {
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
+
+#errorMessage {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#members {
+  text-align: center;
+  h2 {
+    margin-top: 50px;
+  }
+  img {
+    margin: 20px;
+    border-radius: 50%;
+    border: solid 2px @text-color;
+  }
+  a {
+    text-decoration: none;
+    color: @text-color;
+  }
+}
+
+#organization {
+  margin: 40px 0 0 0;
+  text-align: center;
+}
+
+#organizationDescription {
+  background-color: @text-color;
+  padding: 30px;
+  margin: 40px 0;
+  h1 {
+    color: white;
+    font-size: 30px;
+  }
+}
+
+#popularRepos h2 {
+  text-align: center;
+  margin: 30px 0 10px 0;
+  color: @text-color;
+  a {
+    color: @text-color;
+    text-decoration: none;
+  }
+  .badge {
+    font-size: 0.6em;
+    background-color: @text-color;
+  }
+}
+
+#allRepos {
+  text-decoration: none;
+  color: @text-color;
+  font-weight: bold;
+}
+
+.repo {
+  border-color: @text-color;
+  margin-top: 20px;
+  .panel-heading {
+    background-color: @text-color;
+    color: white;
+    a {
+      font-weight: bold;
+      text-decoration: none;
+    }
+  }
+  .panel-title {
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .panel-body{
+    height: 55px;
+    overflow: hidden;
+  }
+  .panel-footer{
+    background-color: white;
+    border-top: none;
+    .counter {
+      margin-right: 10px;
+      margin-left: 3px;
+    }
+    .lang {
+      color: white;
+      background-color: @text-color;
+      padding: 3px;
+      border-radius: 5px;
+      // programming language colors based on https://github.com/doda/github-language-colors
+      &.arduino { background-color: #bd79d1; }
+      &.java { background-color: #b07219; }
+      &.vhdl { background-color: #543978; }
+      &.scala { background-color: #7dd3b0; }
+      &.delphi { background-color: #b0ce4e; }
+      &.ada { background-color: #02f88c; }
+      &.viml { background-color: #199c4b; }
+      &.perl { background-color: #0298c3; }
+      &.lua { background-color: #fa1fa1; }
+      &.rebol { background-color: #358a5b; }
+      &.verilog { background-color: #848bf3; }
+      &.factor { background-color: #636746; }
+      &.ioke { background-color: #078193; }
+      &.r { background-color: #198ce7; }
+      &.erlang { background-color: #949e0e; }
+      &.nu { background-color: #c9df40; }
+      &.autohotkey { background-color: #6594b9; }
+      &.clojure { background-color: #db5855; }
+      &.shell { background-color: #5861ce; }
+      &.assembly { background-color: #a67219; }
+      &.parrot { background-color: #f3ca0a; }
+      &.turing { background-color: #45f715; }
+      &.applescript { background-color: #3581ba; }
+      &.eiffel { background-color: #946d57; }
+      &.lisp { background-color: #3fb68b; }
+      &.dart { background-color: #cccccc; }
+      &.supercollider { background-color: #46390b; }
+      &.coffeescript { background-color: #244776; }
+      &.xquery { background-color: #2700e2; }
+      &.haskell { background-color: #29b544; }
+      &.racket { background-color: #ae17ff; }
+      &.elixir { background-color: #6e4a7e; }
+      &.haxe { background-color: #346d51; }
+      &.ruby { background-color: #701516; }
+      &.self { background-color: #0579aa; }
+      &.fantom { background-color: #dbded5; }
+      &.groovy { background-color: #e69f56; }
+      &.c { background-color: #555; }
+      &.javascript { background-color: #00D8FF; }
+      &.d { background-color: #fcd46d; }
+      &.ooc { background-color: #b0b77e; }
+      &.cpp { background-color: #f34b7d; }
+      &.dylan { background-color: #3ebc27; }
+      &.nimrod { background-color: #37775b; }
+      &.objective-c { background-color: #40996E; }
+      &.nemerle { background-color: #0d3c6e; }
+      &.mirah { background-color: #c7a938; }
+      &.boo { background-color: #d4bec1; }
+      &.objective-j { background-color: #ff0c5a; }
+      &.rust { background-color: #dea584; }
+      &.prolog { background-color: #74283c; }
+      &.ecl { background-color: #8a1267; }
+      &.gosu { background-color: #82937f; }
+      &.fortran { background-color: #4d41b1; }
+      &.coldfusion { background-color: #ed2cd6; }
+      &.ocaml { background-color: #3be133; }
+      &.fancy { background-color: #7b9db4; }
+      &.python { background-color: #FDB000; }
+      &.tcl { background-color: #e4cc98; }
+      &.arc { background-color: #ca2afe; }
+      &.puppet { background-color: #cc5555; }
+      &.io { background-color: #a9188d; }
+      &.max { background-color: #ce279c; }
+      &.go { background-color: #73CDDC; }
+      &.asp { background-color: #6a40fd; }
+      &.php { background-color: #6e03c1; }
+      &.scheme { background-color: #1e4aec; }
+      &.vala { background-color: #3581ba; }
+      &.smalltalk { background-color: #596706; }
+      &.smarty {background-color: #d9534f; }
+    }
+  }
+}
