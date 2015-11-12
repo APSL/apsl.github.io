@@ -36,11 +36,3 @@ All pull requests should:
 
 * Use .eslintrc file to pass the [ESLint](http://eslint.org/) linter.
 * Follow .editorconfig file rules. See [EditorConfig](http://editorconfig.org).
-
-
-## TODO
-
-* Add config to choose port in local server.
-* Tests.
-* Fetch more than 100 repositories.
-* Migrate to Babel 6.
