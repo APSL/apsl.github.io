@@ -8,16 +8,15 @@ import Footer from './footer'
 
 import shuffle from '../js/shuffle'
 
-
-const NUM_REPOS = 9
-
 export default React.createClass({
   propTypes: {
     githubService: React.PropTypes.shape({
       getOrganizationInfo: React.PropTypes.func.isRequired,
       getPopularRepos: React.PropTypes.func.isRequired,
       getMembers: React.PropTypes.func.isRequired
-    }).isRequired
+    }).isRequired,
+    numRepos: React.PropTypes.number.isRequired,
+    numMembers: React.PropTypes.number.isRequired,
   },
 
   getInitialState: function() {
@@ -57,7 +56,7 @@ export default React.createClass({
         console.error(error)
       })
 
-    this.props.githubService.getPopularRepos(NUM_REPOS)
+    this.props.githubService.getPopularRepos(this.props.numRepos)
       .then(data => this.setState({repos: data}))
       .catch(error => {
         this.setState({error: true})
@@ -93,7 +92,11 @@ export default React.createClass({
             htmlUrl={this.state.htmlUrl}
             repos={this.state.repos}
           />
-          <Members members={this.state.members} membersUrl={this.state.membersUrl} />
+          <Members
+            members={this.state.members}
+            membersUrl={this.state.membersUrl}
+            numMembers={this.props.numMembers}
+          />
         </div>
         <Footer
           location={this.state.location}

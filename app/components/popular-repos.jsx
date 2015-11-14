@@ -1,5 +1,6 @@
 import React from 'react'
 import Repo from './repo'
+import SeeAllLink from './see-all-link'
 
 const PROP_TYPES = {
   publicRepos: React.PropTypes.number,
@@ -14,15 +15,7 @@ export default function Repos({publicRepos, htmlUrl, repos}) {
   if (repos.length) {
     const repoElements = repos.map(repo => <Repo repo={repo} key={repo.id} />)
     reposRow = <div className="row">{repoElements}</div>
-    allReposLink = (
-      <div className="row">
-        <div className="col-md-12">
-          <a id="allRepos" className="pull-right" href={htmlUrl}>
-            All repos <i className="fa fa-external-link"></i>
-          </a>
-        </div>
-      </div>
-    )
+    allReposLink = <SeeAllLink text="All repos" url={htmlUrl} />
   }
 
   return (

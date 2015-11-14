@@ -13,6 +13,10 @@ import App from './components/app'
 import GithubService from './js/github-service'
 
 
-const githubService = new GithubService('apsl')
+const appProps = {
+ githubService: new GithubService('apsl'),
+ numRepos: 9,
+ numMembers: 12
+}
 
-ReactDom.render(<App githubService={githubService} />, document.getElementById('app'))
+ReactDom.render(<App {...appProps} />, document.getElementById('app'))
