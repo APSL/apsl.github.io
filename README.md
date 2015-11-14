@@ -10,15 +10,15 @@ Tested with npm 2 and Node.js 0.12 and 4.
 * `npm start`
 * Go to http://localhost:8080/
 
+You can run `npm start -- --port=<port-number>` to use another port.
 
-All options:
+All commands:
 
 * `npm start` : Local server with development assets with hot reload.
 * `npm run server-dev` : Local server with development assets without hot reload.
 * `npm run build-dev` : Build development assets.
 * `npm run server-prod` : Local server with production (minified) assets without hot reload.
 * `npm run build-prod` : Build production assets in dist directory.
-
 
 ## Contribute
 
