@@ -4,8 +4,6 @@ import 'font-awesome/css/font-awesome.css'
 import './style/main.less'
 import './img/favicon.ico'
 
-import 'babel/polyfill'
-
 import React from 'react'
 import ReactDom from 'react-dom'
 

@@ -3,7 +3,10 @@ var webpack = require('webpack')
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  entry: path.resolve(__dirname, 'app/index.jsx'),
+  entry: [
+    'babel-polyfill',
+    path.resolve(__dirname, 'app/index.jsx')
+  ],
 
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -25,9 +28,14 @@ module.exports = {
   module: {
     loaders: [
       {
+        loader: 'babel',
+        include: path.resolve(__dirname, 'app'),  // exclude: /(node_modules|bower_components)/,
         test: /\.jsx?$/,
-        exclude: /(node_modules|bower_components)/,
-        loader: 'babel'
+        query: {
+          cacheDirectory: true,
+          // plugins: ['transform-runtime'],  // Have issues with Babel 6 at the moment.
+          presets: ['es2015', 'react']
+        }
       },{
         test: /\.less$/,
         loader: ExtractTextPlugin.extract('style-loader', 'css-loader!less-loader')
