@@ -14,6 +14,7 @@ You can run `npm start -- --port=<port-number>` to use another port.
 
 All commands:
 
+* `npm test` : Run unit tests.
 * `npm start` : Local server with development assets with hot reload.
 * `npm run server-dev` : Local server with development assets without hot reload.
 * `npm run build-dev` : Build development assets.
@@ -34,5 +35,6 @@ bugs, please do the following:
 
 All pull requests should:
 
+* Have all tests green.
 * Use .eslintrc file to pass the [ESLint](http://eslint.org/) linter.
 * Follow .editorconfig file rules. See [EditorConfig](http://editorconfig.org).
