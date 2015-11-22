@@ -2,7 +2,12 @@
   "name": "apsl-github-io",
   "version": "1.0.0",
   "description": "APSL GitHub page at http://apsl.github.io.",
+  "private": true,
   "main": "index.jsx",
+  "engines": {
+    "node": "^4.2",
+    "npm": "^3.4"
+  },
   "scripts": {
     "start": "webpack-dev-server -d --hot --inline",
     "server-dev": "webpack-dev-server -d",

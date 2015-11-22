@@ -6,7 +6,7 @@ Source code for APSL GitHub page [apsl.github.io](http://apsl.github.io).
 
 ## Development
 
-Tested with npm 2.11 and 3.4 and Node.js 0.12 and 4.2.
+Tested with npm 3.4 and Node.js 4.2.
 
 * `npm install`
 * `npm start`
