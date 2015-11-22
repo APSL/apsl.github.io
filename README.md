@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/APSL/apsl.github.io.svg?branch=master)](https://travis-ci.org/APSL/apsl.github.io)
+
 # apsl.github.io
 
 Source code for APSL GitHub page [apsl.github.io](http://apsl.github.io).
