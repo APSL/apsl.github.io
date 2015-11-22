@@ -21,7 +21,7 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'app/**/*.spec.@(js|jsx)': ['webpack']
+      'app/**/*.spec.@(js|jsx)': ['webpack', 'sourcemap']
     },
 
     // webpack watches dependencies and configuration
@@ -41,7 +41,8 @@ module.exports = function(config) {
             }
           }
         ]
-      }
+      },
+      devtool: 'inline-source-map'
     },
 
     // webpack-dev-middleware configuration

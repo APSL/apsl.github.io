@@ -1,13 +1,25 @@
 import Cache from '../cache'
 
 describe('Cache', () => {
-  let cache
+  it('.get(key) should return undefined when key is not in cache', () => {
+    expect(new Cache().get('foo')).toBe(undefined)
+  })
 
-  beforeEach(() => {
-    cache = new Cache(60 * 1000)
-  });
+  it('.get(key) should return data if key is in cache', () => {
+    const cache = new Cache(60 * 1000);
+    const key = 'foo'
+    const data = {bar: 'baz'}
+    cache.set(key, data)
+    expect(cache.get(key)).toEqual(data)
+  })
 
-  it('.get(key) should return undefined when key does not exist', () => {
-    expect(cache.get('does_not_exist')).toBe(undefined)
+  it('.get(key) should return undefined if key has expired', (done) => {
+    const cache = new Cache(1);
+    const key = 'foo'
+    cache.set(key, {bar: 'baz'})
+    setTimeout(() => {
+      expect(cache.get(key)).toBe(undefined)
+      done()
+    }, 2)
   })
 })
