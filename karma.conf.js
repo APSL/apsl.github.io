@@ -14,6 +14,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
+      'node_modules/babel-polyfill/dist/polyfill.js',
       'app/**/*.spec.@(js|jsx)'
       // each file acts as entry point for the webpack configuration
     ],
