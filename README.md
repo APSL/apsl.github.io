@@ -14,11 +14,12 @@ You can run `npm start -- --port=<port-number>` to use another port.
 
 All commands:
 
-* `npm test` : Run unit tests.
+* `npm test` : Run unit tests in console.
+* `npm run test-browser` : Run unit tests in Chrome browser for debugging (http://localhost:9876).
 * `npm start` : Local server with development assets with hot reload.
 * `npm run server-dev` : Local server with development assets without hot reload.
-* `npm run build-dev` : Build development assets.
 * `npm run server-prod` : Local server with production (minified) assets without hot reload.
+* `npm run build-dev` : Build development assets.
 * `npm run build-prod` : Build production assets in dist directory.
 
 ## Contribute
