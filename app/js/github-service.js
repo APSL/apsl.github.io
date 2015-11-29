@@ -7,9 +7,8 @@ export default class {
   }
 
   getOrganizationInfo() {
-    const CACHE_KEY = 'organizationInfo'
-
     return new Promise((resolve, reject) => {
+      const CACHE_KEY = 'organizationInfo'
       const info = this.cache.get(CACHE_KEY)
 
       if (info && Object.keys(info).length){
@@ -26,9 +25,8 @@ export default class {
   }
 
   getMembers() {
-    const CACHE_KEY = 'members'
-
     return new Promise((resolve, reject) => {
+      const CACHE_KEY = 'members'
       const members = this.cache.get(CACHE_KEY)
 
       if (members && members.length) {
@@ -45,9 +43,8 @@ export default class {
   }
 
   getPopularRepos(limit) {
-    const CACHE_KEY = `popularRepos_${limit}`
-
     return new Promise((resolve, reject) => {
+      const CACHE_KEY = `popularRepos_${limit}`
       const repos = this.cache.get(CACHE_KEY)
 
       if (repos && repos.length) {
