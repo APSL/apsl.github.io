@@ -7,12 +7,16 @@ import './img/favicon.ico'
 import React from 'react'
 import ReactDom from 'react-dom'
 
-import App from './components/app'
+import Cache from './js/cache'
+import GithubClient from './js/github-client'
 import GithubService from './js/github-service'
+import App from './components/app'
 
+const cache = new Cache(1000 * 60 * 60)
+const githubClient = new GithubClient('APSL')
 
 const appProps = {
- githubService: new GithubService('apsl'),
+ githubService: new GithubService(githubClient, cache),
  numRepos: 9,
  numMembers: 12
 }

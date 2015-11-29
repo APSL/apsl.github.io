@@ -1,13 +1,9 @@
-
-import Cache from './cache'
-import GithubClient from './github-client'
-
 /** GitHub service for an organization with cache */
 export default class {
 
-  constructor(organization, cacheTTL=1000 * 60 * 60) {  // 1 hour
-    this.client = new GithubClient(organization)
-    this.cache = new Cache(cacheTTL)
+  constructor(githubClient, cache) {
+    this.githubClient = githubClient
+    this.cache = cache
   }
 
   getOrganizationInfo() {
@@ -19,7 +15,7 @@ export default class {
       if (info && Object.keys(info).length){
          resolve(info)
       } else {
-        this.client.getOrganizationInfo()
+        this.githubClient.getOrganizationInfo()
           .then(info => {
             this.cache.set(CACHE_KEY, info)
             resolve(info)
@@ -38,7 +34,7 @@ export default class {
       if (members && members.length) {
         resolve(members)
       } else {
-        this.client.getMembers()
+        this.githubClient.getMembers()
           .then(members => {
             this.cache.set(CACHE_KEY, members)
             resolve(members)
@@ -57,7 +53,7 @@ export default class {
       if (repos && repos.length) {
         resolve(repos)
       } else {
-        this.client.getPopularRepos(limit)
+        this.githubClient.getPopularRepos(limit)
           .then(repos => {
             this.cache.set(CACHE_KEY, repos)
             resolve(repos)
