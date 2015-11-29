@@ -43,6 +43,7 @@ module.exports = function(config) {
           }
         ]
       },
+      resolve: {extensions: ['', '.js', '.jsx']},
       devtool: 'inline-source-map'
     },
 
