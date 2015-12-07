@@ -12,7 +12,7 @@ export default class {
       const info = this.cache.get(CACHE_KEY)
 
       if (info && Object.keys(info).length){
-         resolve(info)
+        resolve(info)
       } else {
         this.githubClient.getOrganizationInfo()
           .then(info => {
