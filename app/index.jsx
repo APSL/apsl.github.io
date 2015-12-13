@@ -16,9 +16,9 @@ const cache = new Cache(1000 * 60 * 60)
 const githubClient = new GithubClient('APSL')
 
 const appProps = {
- githubService: new GithubService(githubClient, cache),
- numRepos: 9,
- numMembers: 12
+  githubService: new GithubService(githubClient, cache),
+  numRepos: 9,
+  numMembers: 12
 }
 
 ReactDom.render(<App {...appProps} />, document.getElementById('app'))

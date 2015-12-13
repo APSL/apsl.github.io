@@ -1,5 +1,5 @@
-var path = require('path')
-var webpack = require('webpack')
+var path = require('path');
+var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
@@ -25,6 +25,10 @@ module.exports = {
     new ExtractTextPlugin('css/[name].css')
   ],
 
+  eslint: {
+    configFile: path.resolve(__dirname, '.eslintrc')
+  },
+
   module: {
     loaders: [
       {
@@ -36,6 +40,11 @@ module.exports = {
           // plugins: ['transform-runtime'],  // Have issues with Babel 6 at the moment.
           presets: ['es2015', 'react']
         }
+      },
+      {
+        loader: 'eslint-loader',
+        include: path.resolve(__dirname, 'app'),
+        test: /\.jsx?$/
       },{
         test: /\.less$/,
         loader: ExtractTextPlugin.extract('style-loader', 'css-loader!less-loader')

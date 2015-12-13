@@ -11,7 +11,7 @@
     "rules": {
         "strict": [2, "never"],
         "indent": [2, 2],
-        "max-len": [2, 100, 2, {"ignoreUrls": true}]
+        "max-len": [1, 100, 2, {"ignoreUrls": true}]
     },
     "plugins": [
         "react"

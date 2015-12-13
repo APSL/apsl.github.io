@@ -17,8 +17,10 @@ export default function Repo({repo}) {
           {repo.description}
         </div>
         <div className="panel-footer">
-          <i className="fa fa-star pull"></i><span className="counter">{repo.stargazers_count}</span>
-          <i className="fa fa-code-fork"></i><span className="counter">{repo.forks_count}</span>
+          <i className="fa fa-star pull"></i>
+          <span className="counter">{repo.stargazers_count}</span>
+          <i className="fa fa-code-fork"></i>
+          <span className="counter">{repo.forks_count}</span>
           <span className={'pull-right lang ' + repo.language.toLowerCase()}>{repo.language}</span>
         </div>
       </div>

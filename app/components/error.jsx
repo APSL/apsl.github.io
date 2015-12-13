@@ -12,8 +12,11 @@ export default function Error({error}) {
   if (!error) return <noscript />
   return (
     <div id="errorMessage" className="alert alert-danger">
-      <strong>D'oh!</strong> Error fetching data from GitHub API. Try to reload the page again &nbsp;
-      <a href="javascript:location.reload();" className="alert-link"><i className="fa fa-refresh"></i></a>
+      <strong>D'oh! </strong>
+      Error fetching data from GitHub API. Try to reload the page again &nbsp;
+      <a href="javascript:location.reload();" className="alert-link">
+        <i className="fa fa-refresh"></i>
+      </a>
     </div>
   )
 }
