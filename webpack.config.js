@@ -38,6 +38,7 @@ module.exports = {
         query: {
           cacheDirectory: true,
           // plugins: ['transform-runtime'],  // Have issues with Babel 6 at the moment.
+          plugins: ['transform-object-rest-spread'],
           presets: ['es2015', 'react']
         }
       },
