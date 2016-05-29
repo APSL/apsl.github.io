@@ -1,4 +1,9 @@
-import {GET_ORGANIZATION_INFO, GET_POPULAR_REPOS, GET_MEMBERS} from './actions'
+import {
+  SET_ORGANIZATION_INFO,
+  SET_POPULAR_REPOS,
+  SET_MEMBERS,
+  SET_ERROR
+} from './actions'
 
 const initialState =  {
   avatarUrl: '',
@@ -17,12 +22,24 @@ const initialState =  {
 
 export const appReducer = (state = initialState, action) => {
   switch (action.type) {
-  case GET_ORGANIZATION_INFO:
-    return {...state, description: 'Fake description'}
-  case GET_POPULAR_REPOS:
-    return {...state, repos: []}
-  case GET_MEMBERS:
-    return {...state, members: []}
+  case SET_ORGANIZATION_INFO:
+    return {
+      ...state,
+      avatarUrl: action.payload.avatar_url,
+      description: action.payload.description,
+      name: action.payload.name,
+      publicRepos: action.payload.public_repos,
+      htmlUrl: action.payload.html_url,
+      location: action.payload.location,
+      web: action.payload.blog,
+      email: action.payload.email
+    }
+  case SET_POPULAR_REPOS:
+    return {...state, repos: action.payload.repos}
+  case SET_MEMBERS:
+    return {...state, members: action.payload.members}
+  case SET_ERROR:
+    return {...state, error: true}
   default:
     return state
   }
