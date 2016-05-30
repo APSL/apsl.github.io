@@ -10,7 +10,7 @@ describe('Organization component', () => {
     avatarUrl: 'http://foo.bar/avatar',
     description: 'Lorem ipsum',
     name: 'APSL',
-    htmlUrl: 'http://foo.bar/'
+    web: 'http://foo.bar/'
   }
   const WrappedOrganization = wrap(Organization)
   const organization = TestUtils.renderIntoDocument(<WrappedOrganization {...props} />)
@@ -18,7 +18,7 @@ describe('Organization component', () => {
 
   it('should have an image avatar link', () => {
     const a = orgNode.querySelector('a');
-    expect(a.href).toBe(props.htmlUrl)
+    expect(a.href).toBe(props.web)
 
     const img = a.querySelector('img');
     expect(img.src.startsWith(props.avatarUrl)).toBeTruthy()
