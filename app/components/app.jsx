@@ -84,7 +84,7 @@ export default React.createClass({
           avatarUrl={this.state.avatarUrl}
           description={this.state.description}
           name={this.state.name}
-          htmlUrl={this.state.htmlUrl}
+          web={this.state.web}
         />
         <div className="container">
           <PopularRepos
