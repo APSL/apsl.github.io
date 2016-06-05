@@ -22,7 +22,10 @@ module.exports = {
     new webpack.ProvidePlugin({
       'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'
     }),
-    new ExtractTextPlugin('css/[name].css')
+    new ExtractTextPlugin('css/[name].css'),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': '\'' + process.env.NODE_ENV + '\''
+    })
   ],
 
   eslint: {
@@ -38,6 +41,7 @@ module.exports = {
         query: {
           cacheDirectory: true,
           // plugins: ['transform-runtime'],  // Have issues with Babel 6 at the moment.
+          plugins: ['transform-object-rest-spread'],
           presets: ['es2015', 'react']
         }
       },
