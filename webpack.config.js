@@ -22,7 +22,10 @@ module.exports = {
     new webpack.ProvidePlugin({
       'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'
     }),
-    new ExtractTextPlugin('css/[name].css')
+    new ExtractTextPlugin('css/[name].css'),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': '\'' + process.env.NODE_ENV + '\''
+    })
   ],
 
   eslint: {

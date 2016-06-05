@@ -9,9 +9,9 @@
     "npm": "^3.4"
   },
   "scripts": {
-    "start": "webpack-dev-server -d --hot --inline",
-    "server-dev": "webpack-dev-server -d",
-    "build-dev": "webpack -d",
+    "start": "NODE_ENV=development webpack-dev-server -d --hot --inline",
+    "server-dev": "NODE_ENV=development webpack-dev-server -d",
+    "build-dev": "NODE_ENV=development webpack -d",
     "server-prod": "NODE_ENV=production webpack-dev-server -p",
     "build-prod": "NODE_ENV=production webpack -p",
     "test": "karma start",
