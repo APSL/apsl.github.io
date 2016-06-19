@@ -49,10 +49,26 @@ export default class {
   // https://developer.github.com/v3/repos/#list-organization-repositories
   getPopularRepos(limit, type='source') {
     return new Promise((resolve, reject) => {
-      this._call('/repos', {type: type, per_page: 100})
+      this._getRepos(type)
         .then(repos => {
           repos.sort(this._compareReposByPopularity)
           return resolve(repos.slice(0, limit))
+        })
+        .catch(error => reject(error))
+    })
+  }
+
+  // GitHub only allows 100 elements per page so we have to fetch recursively
+  _getRepos(type='source', page=1, repoList=[]) {
+    const per_page = 100
+    return new Promise((resolve, reject) => {
+      this._call('/repos', {type, page, per_page})
+        .then(repos => {
+          repoList.push(...repos)
+          if (repos.length < per_page) {
+            return resolve(repoList)
+          }
+          return resolve(this._getRepos(type, ++page, repoList))
         })
         .catch(error => reject(error))
     })
